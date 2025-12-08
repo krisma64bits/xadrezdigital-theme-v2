@@ -7,3 +7,8 @@ Description: Tema personalizado do Xadrez Digital
 Version: 1.0.0
 Text Domain: xadrezdigital
 */
+
+body,
+html {
+    font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+}
