@@ -14,6 +14,12 @@ function xadrez_theme_setup() {
     register_nav_menus([
         'primary' => __('Menu Principal', 'xadrezdigital'),
     ]);
+
+    // WooCommerce support
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
 }
 add_action('after_setup_theme', 'xadrez_theme_setup');
 
