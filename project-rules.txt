@@ -1,0 +1,2 @@
+1. Qualquer valor arbitrário como w-[500px], text-[24px], p-[15px] é PROIBIDO. Use apenas as classes padrão do Tailwind.
+2. Sempre Tailwind first, nunca CSS puro!

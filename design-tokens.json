@@ -1,0 +1,113 @@
+{
+    "rules": {
+        "tailwind": {
+            "noArbitraryValues": "Qualquer valor arbitrário como w-[500px], text-[24px], p-[15px] é PROIBIDO. Use apenas as classes padrão do Tailwind.",
+            "tailwindFirst": "Sempre Tailwind first, nunca CSS puro. SEMPRE USAR TAILWIND."
+        }
+    },
+    "colors": {
+        "background": {
+            "page": "bg-stone-50",
+            "card": "bg-white",
+            "sectionAlt": "bg-stone-100"
+        },
+        "text": {
+            "heading": "text-stone-900",
+            "body": "text-stone-700",
+            "muted": "text-stone-500",
+            "weak": "text-stone-400"
+        },
+        "primary": {
+            "background": "bg-amber-500",
+            "backgroundHover": "hover:bg-amber-600",
+            "text": "text-amber-700",
+            "border": "border-amber-500"
+        },
+        "secondary": {
+            "success": "text-emerald-600",
+            "successBackground": "bg-emerald-600"
+        },
+        "border": {
+            "default": "border-stone-200"
+        }
+    },
+    "border": {
+        "width": {
+            "default": "border"
+        },
+        "radius": {
+            "md": "rounded-md",
+            "lg": "rounded-lg"
+        }
+    },
+    "shadow": {
+        "card": "shadow-sm",
+        "button": "shadow-sm"
+    },
+    "layout": {
+        "container": {
+            "default": "max-w-7xl mx-auto px-4"
+        }
+    },
+    "typography": {
+        "leading": {
+            "none": "leading-none",
+            "tight": "leading-tight",
+            "relaxed": "leading-relaxed"
+        },
+        "size": {
+            "button": "text-sm"
+        },
+        "weight": {
+            "button": "font-medium"
+        }
+    },
+    "states": {
+        "disabled": {
+            "base": "text-stone-300 bg-stone-100 cursor-not-allowed",
+            "form": "disabled:bg-stone-50 disabled:cursor-not-allowed disabled:opacity-50",
+            "component": "disabled:pointer-events-none disabled:opacity-50"
+        },
+        "focusVisible": {
+            "default": "focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2",
+            "dark": "focus-visible:ring-2 focus-visible:ring-stone-950 focus-visible:ring-offset-2",
+            "danger": "focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2"
+        },
+        "card": {
+            "hover": "no-hover"
+        }
+    },
+    "components": {
+        "button": {
+            "base": "inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+            "variants": {
+                "primary": {
+                    "default": "bg-stone-900 hover:bg-stone-800 text-stone-50 shadow-sm focus-visible:ring-stone-950"
+                },
+                "primaryAmber": {
+                    "default": "bg-amber-500 hover:bg-amber-600 text-white shadow-sm focus-visible:ring-amber-500"
+                },
+                "secondary": {
+                    "default": "border border-stone-200 bg-transparent hover:bg-stone-100 text-stone-900 shadow-sm focus-visible:ring-stone-950"
+                },
+                "ghost": {
+                    "default": "hover:bg-stone-100 text-stone-900 focus-visible:ring-stone-950"
+                },
+                "link": {
+                    "default": "text-stone-900 underline-offset-4 hover:underline focus-visible:ring-stone-950"
+                },
+                "destructive": {
+                    "default": "bg-red-600 hover:bg-red-700 text-white shadow-sm focus-visible:ring-red-600"
+                }
+            }
+        },
+        "input": {
+            "base": "bg-white border border-stone-200 rounded-md px-3 py-2 text-sm placeholder:text-stone-400 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 disabled:bg-stone-50 disabled:cursor-not-allowed disabled:opacity-50"
+        },
+        "card": {
+            "base": "bg-white shadow-sm p-6 rounded-lg",
+            "withBorder": "bg-white shadow-sm p-6 rounded-lg border border-stone-200",
+            "hover": "no-hover"
+        }
+    }
+}
