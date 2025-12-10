@@ -12,6 +12,7 @@
 12. O tema deve ser otimizado para SEO.
 13. O tema deve ser otimizado para o Google Lighthouse.
 14. Não remova estilos do Woocommerce ou wordpress sem que o usuário peça.
+15. Ícones devem ser armazenados como arquivos .php individuais em inc/icons/ (ex: cart.php, whatsapp.php). Use get_template_part('inc/icons/nome-do-icone') para incluir. Suporte a classes customizadas via $args['class'].
 
 Informacoes do tema:
 Nome: Xadrez Digital Theme
