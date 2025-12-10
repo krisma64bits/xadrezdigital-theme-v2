@@ -1,2 +1,22 @@
 1. Qualquer valor arbitrário como w-[500px], text-[24px], p-[15px] é PROIBIDO. Use apenas as classes padrão do Tailwind.
 2. Sempre Tailwind first, nunca CSS puro!
+3. Mantenha o design consistente com o design-token.json
+4. Mantenha o código limpo e organizado, siga as boas práticas de programação. Siga DRY (Don't Repeat Yourself).
+5. Mantenha o tema 100% compatível com Woocommerce e Plugins de terceiros.
+6. Mantenha o tema 100% compatível com o WordPress.
+7. O tema não será compatível com Elementor ou Gutenberg.
+8. Ele não será distribuido, é exclusivo para o Xadrez Digital.
+9. O tema não deve ter codigo sujo, ele deve ser limpo e organizado.
+10. O tema deve ser responsivo e mobile first.
+11. Focado em altíssima perfomance, tentando o melhor desempenho possível.
+12. O tema deve ser otimizado para SEO.
+13. O tema deve ser otimizado para o Google Lighthouse.
+14. Não remova estilos do Woocommerce ou wordpress sem que o usuário peça.
+
+Informacoes do tema:
+Nome: Xadrez Digital Theme
+Author: Xadrez Digital
+Author URI: https://xadrezdigital.com
+Email: contato@xadrezdigital.com
+Loja virtual focada em produtos de xadrez como Softwares e Databases.
+
