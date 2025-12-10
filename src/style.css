@@ -3,8 +3,38 @@
 
 /* Importar o Tailwind CSS */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Configurar a fonte Manrope como fonte sans padrão */
 @theme {
     --font-family-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Aplicar tipografia prose apenas nas descrições do WooCommerce */
+.woocommerce-product-details__short-description,
+#tab-description {
+    @apply prose prose-stone max-w-none;
+}
+
+/* Reduzir margins dos headings no prose */
+.woocommerce-product-details__short-description,
+#tab-description {
+
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+        @apply mt-4 mb-2;
+    }
+
+    & p {
+        @apply my-2 text-lg;
+    }
+
+    & ul,
+    & ol {
+        @apply my-2;
+    }
 }
