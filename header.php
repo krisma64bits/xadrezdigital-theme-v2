@@ -12,7 +12,17 @@
 <?php wp_body_open(); ?>
 
 <header>
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+    <div class="site-branding">
+        <?php
+        if (has_custom_logo()) {
+            the_custom_logo();
+        } else {
+            ?>
+            <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+            <?php
+        }
+        ?>
+    </div>
     <nav>
         <?php wp_nav_menu(['theme_location' => 'primary']); ?>
     </nav>
