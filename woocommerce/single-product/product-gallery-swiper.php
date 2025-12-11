@@ -41,7 +41,7 @@ $has_multiple_images = count($images) > 1;
         <div class="swiper xd-thumbs-swiper" id="xd-thumbs-swiper">
             <div class="swiper-wrapper">
                 <?php foreach ($images as $index => $image) : ?>
-                <div class="swiper-slide !w-16 !h-16 lg:!w-full lg:!h-auto cursor-pointer rounded-md overflow-hidden border-2 border-transparent transition-colors hover:border-stone-300"
+                <div class="swiper-slide cursor-pointer rounded-md overflow-hidden border-2 border-transparent transition-colors hover:border-stone-300"
                      data-image-id="<?php echo esc_attr($image['id']); ?>">
                     <img src="<?php echo esc_url($image['thumb_src']); ?>"
                          alt="<?php echo esc_attr($image['alt']); ?>"
@@ -85,12 +85,8 @@ $has_multiple_images = count($images) > 1;
             
             <?php if ($has_multiple_images) : ?>
             <!-- Navigation Arrows -->
-            <button class="swiper-button-prev xd-nav-btn !w-10 !h-10 !rounded-full !bg-white/90 !shadow-md after:!text-stone-700 after:!text-sm !left-3 hover:!bg-white transition-colors"
-                    aria-label="<?php esc_attr_e('Imagem anterior', 'xadrezdigital'); ?>">
-            </button>
-            <button class="swiper-button-next xd-nav-btn !w-10 !h-10 !rounded-full !bg-white/90 !shadow-md after:!text-stone-700 after:!text-sm !right-3 hover:!bg-white transition-colors"
-                    aria-label="<?php esc_attr_e('Próxima imagem', 'xadrezdigital'); ?>">
-            </button>
+            <button class="swiper-button-prev xd-nav-btn" aria-label="<?php esc_attr_e('Imagem anterior', 'xadrezdigital'); ?>"></button>
+            <button class="swiper-button-next xd-nav-btn" aria-label="<?php esc_attr_e('Próxima imagem', 'xadrezdigital'); ?>"></button>
             <?php endif; ?>
         </div>
     </div>

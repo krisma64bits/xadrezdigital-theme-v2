@@ -133,13 +133,3 @@ function xd_get_product_gallery_images(WC_Product $product): array {
     
     return $images;
 }
-
-/**
- * Desabilita o zoom e lightbox nativos do WooCommerce
- * já que usaremos nossa própria implementação
- */
-function xd_disable_native_gallery_features(): void {
-    // Mantemos o suporte declarado para não quebrar nada,
-    // mas os scripts não serão carregados na página de produto único
-    // pois substituímos completamente a galeria
-}

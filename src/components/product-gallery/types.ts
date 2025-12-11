@@ -11,5 +11,5 @@ export interface ProductGalleryConfig {
 export const DEFAULT_CONFIG: ProductGalleryConfig = {
     mainSelector: '#xd-main-swiper',
     thumbsSelector: '#xd-thumbs-swiper',
-    activeThumbClass: '!border-amber-500',
+    activeThumbClass: 'border-amber-500',
 };

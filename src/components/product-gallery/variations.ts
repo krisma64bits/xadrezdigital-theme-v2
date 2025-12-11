@@ -18,7 +18,11 @@ export function setupVariationSupport(mainSwiper: Swiper, thumbsSwiper: Swiper |
     form.addEventListener('found_variation', ((event: CustomEvent) => {
         const variation = event.detail;
 
-        if (variation?.image?.full_src) {
+        if (!variation?.image) {
+            return;
+        }
+
+        if (variation.image.full_src) {
             updateMainImage(mainSwiper, variation.image);
             updateThumbnail(thumbsSwiper, variation.image);
             mainSwiper.slideTo(0);

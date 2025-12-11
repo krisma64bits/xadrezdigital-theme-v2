@@ -2,7 +2,7 @@
    Product Gallery Component Styles
    ================================================ */
 
-@import "tailwindcss";
+@reference "tailwindcss";
 
 /* Main Swiper - altura definida pelo aspect-square no template */
 .xd-main-swiper {
@@ -31,22 +31,42 @@
 }
 
 .xd-thumbs-swiper .swiper-slide {
-    @apply !w-16 !h-16 shrink-0;
+    @apply w-16 h-16 shrink-0 lg:w-full lg:h-auto;
 }
 
-/* Thumbnail ativo */
+/* Thumbnail ativo - usa border-amber-500 do design-tokens.json */
 .xd-thumbs-swiper .swiper-slide-thumb-active {
-    @apply !border-amber-500;
+    @apply border-amber-500;
 }
 
-/* Navigation buttons customizados */
+/* Navigation buttons - estilos seguindo design tokens */
+.xd-nav-btn {
+    @apply w-10 h-10 rounded-full bg-white/90 shadow-md transition-colors;
+}
+
+.xd-nav-btn:hover {
+    @apply bg-white;
+}
+
+.xd-nav-btn::after {
+    @apply text-stone-700 text-sm;
+}
+
+.xd-nav-btn.swiper-button-prev {
+    @apply left-3;
+}
+
+.xd-nav-btn.swiper-button-next {
+    @apply right-3;
+}
+
 .xd-nav-btn.swiper-button-disabled {
-    @apply !opacity-30 !cursor-not-allowed;
+    @apply opacity-30 cursor-not-allowed;
 }
 
-/* Esconde setas no mobile se pouco espaço */
+/* Esconde setas no mobile */
 @media (max-width: 640px) {
     .xd-nav-btn {
-        @apply !hidden;
+        @apply hidden;
     }
 }
