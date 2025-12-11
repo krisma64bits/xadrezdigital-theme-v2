@@ -13,12 +13,7 @@
 /* Aplicar tipografia prose apenas nas descrições do WooCommerce */
 .woocommerce-product-details__short-description,
 #tab-description {
-    @apply prose prose-stone max-w-none;
-}
-
-/* Reduzir margins dos headings no prose */
-.woocommerce-product-details__short-description,
-#tab-description {
+    @apply prose-stone max-w-none;
 
     & h1,
     & h2,

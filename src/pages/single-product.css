@@ -3,7 +3,7 @@
    Carregado condicionalmente apenas em páginas de produto
    ================================================ */
 
-@import "tailwindcss";
+@reference "tailwindcss";
 
 /* ================================================
    WooCommerce Single Product Layout
