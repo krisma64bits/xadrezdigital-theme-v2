@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 get_header(); ?>
 
 <main class="bg-stone-50 py-8">
-    <div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-6xl mx-auto px-8">
         <?php woocommerce_breadcrumb(); ?>
         <?php woocommerce_content(); ?>
     </div>

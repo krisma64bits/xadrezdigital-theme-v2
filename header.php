@@ -14,7 +14,7 @@
 <header class="bg-white">
     <!-- Header Top -->
     <div class="border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-8 py-4">
+        <div class="max-w-6xl mx-auto px-8 py-4">
             <div class="flex items-center justify-between gap-8">
                 <!-- Logo -->
                 <div class="flex-shrink-0 w-56">
@@ -85,7 +85,7 @@
 
     <!-- Header Bottom -->
     <div class="bg-stone-900">
-        <div class="max-w-7xl mx-auto px-8">
+        <div class="max-w-6xl mx-auto px-8">
             <div class="flex items-center justify-between">
                 <!-- Navegação Principal -->
                 <nav class="flex-1 group/nav">

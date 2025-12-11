@@ -34,7 +34,7 @@ add_action('wp', 'xd_setup_custom_gallery');
  * Abre o container flex para galeria + summary
  */
 function xd_open_product_layout(): void {
-    echo '<div class="xd-product-layout flex flex-col lg:flex-row lg:gap-8">';
+    echo '<div class="xd-product-layout flex flex-col lg:flex-row lg:items-start lg:gap-8">';
 }
 
 /**
