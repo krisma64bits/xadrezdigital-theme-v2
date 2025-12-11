@@ -83,3 +83,6 @@ add_action('wp_enqueue_scripts', 'xadrez_enqueue_assets');
 
 // WooCommerce Custom Gallery
 require_once get_template_directory() . '/inc/woocommerce-gallery.php';
+
+// WooCommerce Custom Price Display
+require_once get_template_directory() . '/inc/woocommerce-price.php';

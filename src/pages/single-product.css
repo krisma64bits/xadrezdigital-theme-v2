@@ -25,8 +25,9 @@
 }
 
 /* Summary ocupa 40% */
-.xd-product-layout .summary {
-    @apply w-full lg:w-2/5 border border-stone-200 rounded-lg p-6;
+.woocommerce .xd-product-layout .summary,
+.woocommerce-page .xd-product-layout .summary {
+    @apply w-full lg:w-2/5 border border-stone-200 rounded-lg p-5;
 }
 
 /* Ocultar categorias e tags do produto */
