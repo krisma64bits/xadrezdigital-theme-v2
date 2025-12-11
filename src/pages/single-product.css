@@ -1,0 +1,12 @@
+/**
+ * Single Product Page Styles
+ * 
+ * Estilos específicos da página de produto único.
+ * Este arquivo é carregado condicionalmente apenas nesta página.
+ * 
+ * @see functions.php - xadrez_enqueue_assets()
+ */
+
+/* Components */
+@import "../components/product-gallery/styles.css";
+@import "../components/add-to-cart/styles.css";

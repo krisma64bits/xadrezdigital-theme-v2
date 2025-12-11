@@ -32,7 +32,7 @@ if ( ! apply_filters( 'woocommerce_show_payment_options_button', true, $product 
 
 <button
     type="button"
-    class="xd-payment-options-btn inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-stone-200 bg-transparent hover:bg-stone-100 text-stone-900 focus-visible:ring-stone-950 mt-2"
+    class="xd-payment-options-btn inline-flex items-center justify-center rounded-md px-4 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-stone-200 bg-transparent hover:bg-stone-100 text-stone-900 focus-visible:ring-stone-950 mt-2"
     data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
 >
     <?php esc_html_e( 'Ver mais opções de pagamento', 'xadrezdigital' ); ?>

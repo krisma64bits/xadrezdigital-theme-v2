@@ -1,0 +1,11 @@
+/**
+ * Add to Cart Component - Index
+ * 
+ * Importa todos os estilos do componente add-to-cart.
+ * Este arquivo é o entry point do componente.
+ */
+
+@import "./form.css";
+@import "./button.css";
+@import "./quantity.css";
+@import "./variations.css";

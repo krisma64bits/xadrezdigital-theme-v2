@@ -1,0 +1,24 @@
+/**
+ * Add to Cart Form - Container Styles
+ * 
+ * Estilos do container form.cart do WooCommerce.
+ * 
+ * @see design-tokens.json
+ */
+
+@reference "../../style.css";
+
+/* Remove margin-bottom padrão do WooCommerce */
+.woocommerce div.product form.cart {
+    @apply !mb-0;
+}
+
+/* Remove clearfix do WooCommerce que causa espaço extra */
+.woocommerce div.product form.cart::before,
+.woocommerce div.product form.cart::after {
+    @apply !content-none !hidden;
+}
+
+form.cart {
+    @apply !flex !flex-wrap !items-center !gap-3 !mt-4;
+}

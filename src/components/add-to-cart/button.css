@@ -1,0 +1,71 @@
+/**
+ * Add to Cart Button Styles
+ * 
+ * Botão de adicionar ao carrinho do WooCommerce.
+ * Usa design-tokens primaryAmber variant.
+ * 
+ * @see design-tokens.json
+ */
+
+@reference "../../style.css";
+
+/* ==========================================================================
+   BOTÃO PRINCIPAL
+   ========================================================================== */
+
+.single_add_to_cart_button {
+    @apply !inline-flex !items-center !justify-center !gap-2 !flex-1;
+    @apply !rounded-md !px-6 !h-10;
+    @apply !text-sm !font-medium !leading-none;
+    @apply !transition-colors;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+    /* primaryAmber variant from design-tokens */
+    @apply !bg-amber-500 !text-white !shadow-sm;
+    @apply focus-visible:ring-amber-500;
+}
+
+.single_add_to_cart_button:hover {
+    @apply !bg-amber-600;
+}
+
+/* ==========================================================================
+   ÍCONE DO CARRINHO
+   ========================================================================== */
+
+/* Ícone via pseudo-element - mantém HTML intacto */
+.single_add_to_cart_button::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-color: currentColor;
+    flex-shrink: 0;
+    /* Ícone de carrinho como mask-image */
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 27.411 24'%3E%3Cpath d='M22.713 4.077A2.993 2.993 0 0 0 20.41 3H4.242L4.2 2.649A3 3 0 0 0 1.222 0H1a1 1 0 0 0 0 2h.222a1 1 0 0 1 .993.883l1.376 11.7A5 5 0 0 0 8.557 19H19a1 1 0 0 0 0-2H8.557a3 3 0 0 1-2.82-2h11.92a5 5 0 0 0 4.921-4.113l.785-4.354a2.994 2.994 0 0 0-.65-2.456ZM21.4 6.178l-.786 4.354A3 3 0 0 1 17.657 13H5.419l-.941-8H20.41a1 1 0 0 1 .99 1.178Z'/%3E%3Ccircle cx='7' cy='22' r='2'/%3E%3Ccircle cx='17' cy='22' r='2'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 27.411 24'%3E%3Cpath d='M22.713 4.077A2.993 2.993 0 0 0 20.41 3H4.242L4.2 2.649A3 3 0 0 0 1.222 0H1a1 1 0 0 0 0 2h.222a1 1 0 0 1 .993.883l1.376 11.7A5 5 0 0 0 8.557 19H19a1 1 0 0 0 0-2H8.557a3 3 0 0 1-2.82-2h11.92a5 5 0 0 0 4.921-4.113l.785-4.354a2.994 2.994 0 0 0-.65-2.456ZM21.4 6.178l-.786 4.354A3 3 0 0 1 17.657 13H5.419l-.941-8H20.41a1 1 0 0 1 .99 1.178Z'/%3E%3Ccircle cx='7' cy='22' r='2'/%3E%3Ccircle cx='17' cy='22' r='2'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
+
+/* ==========================================================================
+   ESTADOS
+   ========================================================================== */
+
+/* Loading */
+.single_add_to_cart_button.loading {
+    @apply !opacity-70 !pointer-events-none;
+}
+
+/* Adicionado com sucesso */
+.single_add_to_cart_button.added {
+    @apply !bg-emerald-600;
+}
+
+.single_add_to_cart_button.added:hover {
+    @apply !bg-emerald-700;
+}

@@ -1,0 +1,56 @@
+/**
+ * Variations Form Styles
+ * 
+ * Estilos para produtos variáveis do WooCommerce.
+ * 
+ * @see design-tokens.json
+ */
+
+@reference "../../style.css";
+
+/* ==========================================================================
+   BOTÃO EM PRODUTOS VARIÁVEIS
+   ========================================================================== */
+
+.variations_form .single_add_to_cart_button {
+    @apply !w-full;
+
+    @variant sm {
+        @apply !w-auto;
+    }
+}
+
+/* ==========================================================================
+   TABELA DE VARIAÇÕES
+   ========================================================================== */
+
+.variations {
+    @apply !mb-4;
+}
+
+.variations td.label {
+    @apply !text-sm !font-medium !text-stone-700 !pb-2;
+}
+
+.variations td.value {
+    @apply !pb-2;
+}
+
+.variations td.value select {
+    @apply !w-full !rounded-md !border !border-stone-200 !px-3 !py-2;
+    @apply !text-sm !text-stone-900;
+    @apply focus:border-amber-500 focus:ring-1 focus:ring-amber-500;
+    @apply !bg-white;
+}
+
+/* ==========================================================================
+   RESET VARIATIONS
+   ========================================================================== */
+
+.reset_variations {
+    @apply !text-sm !text-stone-500 !ml-2;
+}
+
+.reset_variations:hover {
+    @apply !text-stone-700;
+}

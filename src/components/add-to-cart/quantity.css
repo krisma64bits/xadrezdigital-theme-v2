@@ -1,0 +1,76 @@
+/**
+ * Quantity Selector Styles
+ * 
+ * Seletor de quantidade do WooCommerce com botões +/-.
+ * 
+ * @see design-tokens.json
+ */
+
+@reference "../../style.css";
+
+/* ==========================================================================
+   CONTAINER
+   ========================================================================== */
+
+/* Reset margins do WooCommerce */
+.woocommerce div.product form.cart div.quantity {
+    @apply !float-none !m-0;
+}
+
+/* Container - min-w evita layout shift quando JS injeta botões */
+.quantity {
+    @apply !inline-flex !items-center;
+    @apply !border !border-stone-200 !rounded-md;
+    @apply !bg-white;
+    @apply !overflow-hidden;
+    /* Reserva espaço: 2 botões (w-9 cada = 4.5rem) + input (w-12 = 3rem) = 7.5rem */
+    min-width: 7.5rem;
+}
+
+/* ==========================================================================
+   BOTÕES +/-
+   ========================================================================== */
+
+/* Botões injetados via JS */
+.xd-qty-btn {
+    @apply !flex !items-center !justify-center;
+    @apply !w-9 !h-10;
+    @apply !text-stone-500 !text-lg !font-medium;
+    @apply !cursor-pointer !select-none;
+    @apply !transition-colors;
+    @apply !bg-transparent;
+}
+
+.xd-qty-btn:hover {
+    @apply !bg-stone-100 !text-stone-700;
+}
+
+.xd-qty-minus {
+    @apply !border-r !border-stone-200;
+}
+
+.xd-qty-plus {
+    @apply !border-l !border-stone-200;
+}
+
+/* ==========================================================================
+   INPUT
+   ========================================================================== */
+
+.quantity .qty {
+    @apply !w-12 !h-10;
+    @apply !text-center !text-sm !font-medium !text-stone-900;
+    @apply !border-0 !bg-transparent;
+    @apply focus:outline-none focus:ring-0;
+    /* Remove spinners nativos */
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Remove spinners do input number */
+.quantity .qty::-webkit-outer-spin-button,
+.quantity .qty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
