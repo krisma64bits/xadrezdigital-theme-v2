@@ -86,3 +86,6 @@ require_once get_template_directory() . '/inc/woocommerce-gallery.php';
 
 // WooCommerce Custom Price Display
 require_once get_template_directory() . '/inc/woocommerce-price.php';
+
+// WooCommerce Single Product Layout
+require_once get_template_directory() . '/inc/woocommerce-single-product.php';
