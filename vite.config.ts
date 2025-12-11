@@ -19,9 +19,19 @@ export default defineConfig({
 
         // Ponto de entrada
         rollupOptions: {
-            input: 'src/main.ts',
+            input: {
+                main: 'src/main.ts',
+                'single-product': 'src/pages/single-product.ts',
+            },
+            output: {
+                // Coloca todos os chunks no mesmo bundle para evitar problemas de path
+                manualChunks: undefined,
+            },
         },
     },
+
+    // Base path relativo - será resolvido em runtime
+    base: './',
 
     // Configuração do servidor de desenvolvimento
     server: {

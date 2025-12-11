@@ -1,0 +1,52 @@
+/* ================================================
+   Product Gallery Component Styles
+   ================================================ */
+
+@import "tailwindcss";
+
+/* Main Swiper - altura definida pelo aspect-square no template */
+.xd-main-swiper {
+    @apply w-full h-full;
+}
+
+.xd-main-swiper .swiper-wrapper {
+    @apply h-full;
+}
+
+.xd-main-swiper .swiper-slide {
+    @apply flex items-center justify-center bg-stone-100 h-full;
+}
+
+.xd-main-swiper .swiper-slide a {
+    @apply flex items-center justify-center w-full h-full;
+}
+
+/* Thumbs Swiper - horizontal no mobile, vertical no desktop */
+.xd-thumbs-swiper {
+    @apply overflow-hidden;
+}
+
+.xd-thumbs-swiper .swiper-wrapper {
+    @apply flex flex-row lg:flex-col gap-2;
+}
+
+.xd-thumbs-swiper .swiper-slide {
+    @apply !w-16 !h-16 shrink-0;
+}
+
+/* Thumbnail ativo */
+.xd-thumbs-swiper .swiper-slide-thumb-active {
+    @apply !border-amber-500;
+}
+
+/* Navigation buttons customizados */
+.xd-nav-btn.swiper-button-disabled {
+    @apply !opacity-30 !cursor-not-allowed;
+}
+
+/* Esconde setas no mobile se pouco espaço */
+@media (max-width: 640px) {
+    .xd-nav-btn {
+        @apply !hidden;
+    }
+}

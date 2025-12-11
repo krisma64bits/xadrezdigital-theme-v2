@@ -1,0 +1,20 @@
+/* ================================================
+   Single Product Page Styles
+   Carregado condicionalmente apenas em páginas de produto
+   ================================================ */
+
+@import "tailwindcss";
+
+/* ================================================
+   WooCommerce Single Product Layout
+   ================================================ */
+
+/* Galeria ocupa 60% */
+.xd-product-layout .xd-product-gallery {
+    @apply w-full lg:w-3/5 shrink-0;
+}
+
+/* Summary ocupa 40% */
+.xd-product-layout .summary {
+    @apply w-full lg:w-2/5;
+}

@@ -34,28 +34,43 @@ add_action('after_setup_theme', 'xadrez_theme_setup');
 function xadrez_enqueue_assets() {
     $manifest_path = get_template_directory() . '/dist/.vite/manifest.json';
     
-    if (file_exists($manifest_path)) {
-        $manifest = json_decode(file_get_contents($manifest_path), true);
-        
-        // Carregar CSS compilado
-        if (isset($manifest['src/main.ts']['css'])) {
-            foreach ($manifest['src/main.ts']['css'] as $css_file) {
-                wp_enqueue_style(
-                    'xadrez-tailwind',
-                    get_template_directory_uri() . '/dist/' . $css_file,
-                    [],
-                    null
-                );
+    if (!file_exists($manifest_path)) {
+        // Fallback para o style.css do tema (header do WordPress)
+        wp_enqueue_style('xadrez-style', get_stylesheet_uri());
+        return;
+    }
+    
+    $manifest = json_decode(file_get_contents($manifest_path), true);
+    $dist_uri = get_template_directory_uri() . '/dist/';
+    
+    // CSS global (main.ts)
+    if (isset($manifest['src/main.ts']['css'])) {
+        foreach ($manifest['src/main.ts']['css'] as $css_file) {
+            wp_enqueue_style('xadrez-main', $dist_uri . $css_file, [], null);
+        }
+    }
+    
+    // JS global (main.ts) - opcional, só carrega se tiver conteúdo além de CSS
+    if (isset($manifest['src/main.ts']['file'])) {
+        wp_enqueue_script('xadrez-main', $dist_uri . $manifest['src/main.ts']['file'], [], null, true);
+    }
+    
+    // CSS/JS específico de Single Product - CONDICIONAL
+    if (function_exists('is_product') && is_product()) {
+        // CSS do single-product
+        if (isset($manifest['src/pages/single-product.ts']['css'])) {
+            foreach ($manifest['src/pages/single-product.ts']['css'] as $css_file) {
+                wp_enqueue_style('xadrez-single-product', $dist_uri . $css_file, ['xadrez-main'], null);
             }
         }
         
-        // Carregar JS compilado
-        if (isset($manifest['src/main.ts']['file'])) {
+        // JS do single-product
+        if (isset($manifest['src/pages/single-product.ts']['file'])) {
             wp_enqueue_script(
-                'xadrez-main',
-                get_template_directory_uri() . '/dist/' . $manifest['src/main.ts']['file'],
-                [],
-                null,
+                'xadrez-single-product',
+                $dist_uri . $manifest['src/pages/single-product.ts']['file'],
+                [], 
+                null, 
                 true
             );
         }
@@ -65,3 +80,6 @@ function xadrez_enqueue_assets() {
     wp_enqueue_style('xadrez-style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts', 'xadrez_enqueue_assets');
+
+// WooCommerce Custom Gallery
+require_once get_template_directory() . '/inc/woocommerce-gallery.php';
