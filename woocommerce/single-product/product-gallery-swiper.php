@@ -32,7 +32,7 @@ if (empty($images)) {
 $has_multiple_images = count($images) > 1;
 ?>
 
-<div class="xd-product-gallery flex flex-col lg:flex-row gap-4"
+<div class="xd-product-gallery flex flex-col lg:flex-row gap-4 w-full lg:w-3/5 shrink-0 border border-stone-200 rounded-lg p-4"
      data-product-id="<?php echo esc_attr($product->get_id()); ?>">
     
     <?php if ($has_multiple_images) : ?>

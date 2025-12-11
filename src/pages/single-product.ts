@@ -11,7 +11,6 @@ import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
 
 // Component CSS
-import './single-product.css';
 import '../components/product-gallery/styles.css';
 
 // Component
