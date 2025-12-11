@@ -1,0 +1,53 @@
+/**
+ * ========================================
+ * PRODUCT TABS STYLING
+ * ========================================
+ */
+.xd-product-tabs {
+    @apply !bg-white !border !border-stone-200 !rounded-lg !overflow-hidden;
+
+    /* Lista de abas (navegação) */
+    & .wc-tabs {
+        @apply !flex !flex-wrap !gap-1 !p-2 !m-0 !list-none !bg-stone-100 !border-b-0;
+
+        /* Remove pseudo-elementos do WooCommerce */
+        &::before,
+        &::after {
+            @apply !hidden !content-none;
+        }
+
+        & li {
+            @apply !m-0 !p-0 !bg-transparent !border-0;
+
+            /* Remove pseudo-elementos do WooCommerce */
+            &::before,
+            &::after {
+                @apply !hidden !content-none;
+            }
+
+            & a {
+                @apply !block !px-4 !py-2 !text-sm !font-medium !text-stone-500 !bg-transparent !rounded-md !border-0 !transition-colors !no-underline;
+
+                /* Remove pseudo-elementos do WooCommerce */
+                &::before,
+                &::after {
+                    @apply !hidden !content-none;
+                }
+            }
+
+            & a:hover {
+                @apply !text-stone-700 !bg-stone-200;
+            }
+
+            /* Aba ativa */
+            &.active a {
+                @apply !text-stone-900 !bg-white !shadow-sm !rounded-md;
+            }
+        }
+    }
+
+    /* Painel de conteúdo */
+    & .wc-tab {
+        @apply !p-6 !border-t !border-stone-200;
+    }
+}

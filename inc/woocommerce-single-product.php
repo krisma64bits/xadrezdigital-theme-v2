@@ -15,6 +15,24 @@ if (!defined('ABSPATH')) {
  */
 
 /**
+ * Adiciona classe customizada ao wrapper das tabs via output buffering
+ */
+add_action('woocommerce_before_single_product', function() {
+    ob_start();
+});
+
+add_action('woocommerce_after_single_product', function() {
+    $html = ob_get_clean();
+    // Adiciona classe xd-product-tabs ao wrapper .wc-tabs-wrapper
+    $html = str_replace(
+        'class="woocommerce-tabs wc-tabs-wrapper"',
+        'class="woocommerce-tabs wc-tabs-wrapper xd-product-tabs"',
+        $html
+    );
+    echo $html;
+});
+
+/**
  * Customiza as abas do produto
  */
 add_filter('woocommerce_product_tabs', function($tabs) {
@@ -104,7 +122,7 @@ function xadrez_product_tab_installation() {
  */
 add_action('woocommerce_after_single_product_summary', function() {
     echo '<div class="flex flex-col lg:flex-row gap-8">';
-    echo '<div class="w-full lg:w-2/3">';
+    echo '<div class="w-full lg:w-3/5 shrink-0">';
 }, 9);
 
 /**
@@ -112,7 +130,7 @@ add_action('woocommerce_after_single_product_summary', function() {
  */
 add_action('woocommerce_after_single_product_summary', function() {
     echo '</div>'; // fecha div das tabs
-    echo '<aside class="w-full lg:w-1/3">';
+    echo '<aside class="w-full lg:w-2/5">';
 
     // Renderiza a sidebar de especificações
     xadrez_product_sidebar_specs();

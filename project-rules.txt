@@ -13,6 +13,12 @@
 13. O tema deve ser otimizado para o Google Lighthouse.
 14. Não remova estilos do Woocommerce ou wordpress sem que o usuário peça.
 15. Ícones devem ser armazenados como arquivos .php individuais em inc/icons/ (ex: cart.php, whatsapp.php). Use get_template_part('inc/icons/nome-do-icone') para incluir. Suporte a classes customizadas via $args['class'].
+16. Customização WooCommerce com compatibilidade: Para estilizar componentes WooCommerce (tabs, forms, etc) sem quebrar compatibilidade com plugins:
+    a) Use filtros/hooks para INJETAR classes customizadas no wrapper (ex: output buffering + str_replace para adicionar classe)
+    b) Use CSS Tailwind (em src/components/) para estilizar via classe injetada
+    c) NUNCA faça template override apenas para mudar estilos
+    d) NUNCA altere a estrutura HTML/markup original do WooCommerce
+    e) Mantenha atributos ARIA e funcionalidade JavaScript intactos
 
 Informacoes do tema:
 Nome: Xadrez Digital Theme
