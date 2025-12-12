@@ -113,25 +113,35 @@
  * FORMULÁRIO SLIDE-DOWN
  * Escondido por padrão, aparece com animação
  * ======================================== */
+/* ========================================
+ * FORMULÁRIO SLIDE-DOWN
+ * Escondido por padrão, aparece com animação
+ * ======================================== */
 .xd-product-reviews #review_form_wrapper {
-    @apply !p-0 grid overflow-hidden transition-all duration-300 ease-out border-t border-stone-200;
+    /* Wrapper controla altura e borda */
+    @apply !p-0 grid overflow-hidden transition-all duration-300 ease-in-out border-t;
+    @apply border-transparent;
+    /* Inicialmente transparente */
     grid-template-rows: 0fr;
 }
 
-.xd-product-reviews #review_form_wrapper:not(.xd-form-open) {
-    @apply border-transparent;
-}
-
 .xd-product-reviews #review_form_wrapper.xd-form-open {
+    /* Quando aberto: altura total e borda visível */
     grid-template-rows: 1fr;
+    @apply border-stone-200;
 }
 
 .xd-product-reviews #review_form_wrapper>div {
     @apply overflow-hidden;
 }
 
-/* Padding no formulário quando aberto */
-.xd-product-reviews #review_form_wrapper.xd-form-open #review_form {
+/* Conteúdo interno com padding fixo (não anima, só desliza) */
+.xd-product-reviews #review_form_wrapper #review_form {
+    @apply p-0 min-h-0;
+    /* IMPORTANTE: min-h-0 para o grid fechar até 0 */
+}
+
+.xd-product-reviews #review_form_wrapper #review_form #respond {
     @apply p-6;
 }
 
