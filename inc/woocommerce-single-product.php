@@ -23,12 +23,28 @@ add_action('woocommerce_before_single_product', function() {
 
 add_action('woocommerce_after_single_product', function() {
     $html = ob_get_clean();
+    
     // Adiciona classe xd-product-tabs ao wrapper .wc-tabs-wrapper
     $html = str_replace(
         'class="woocommerce-tabs wc-tabs-wrapper"',
         'class="woocommerce-tabs wc-tabs-wrapper xd-product-tabs"',
         $html
     );
+    
+    // Adiciona classe xd-product-section ao wrapper de upsells
+    $html = str_replace(
+        'class="up-sells upsells products"',
+        'class="up-sells upsells products xd-product-section"',
+        $html
+    );
+    
+    // Adiciona classe xd-product-section ao wrapper de related products
+    $html = str_replace(
+        'class="related products"',
+        'class="related products xd-product-section"',
+        $html
+    );
+    
     echo $html;
 });
 
