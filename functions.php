@@ -93,3 +93,6 @@ require_once get_template_directory() . '/inc/woocommerce-single-product.php';
 
 // WooCommerce Reviews Customization
 require_once get_template_directory() . '/inc/woocommerce-reviews.php';
+
+// WooCommerce Breadcrumb Customization (via filtros, sem template override)
+require_once get_template_directory() . '/inc/woocommerce-breadcrumb.php';
