@@ -2,6 +2,9 @@
 /**
  * WooCommerce Single Product Layout Customization
  * Reorganiza as seções da página de produto usando apenas hooks
+ * 
+ * IMPORTANTE: Este arquivo elimina a necessidade de template overrides!
+ * O layout 60/40 (galeria + summary) é injetado via HOOKS PUROS.
  */
 
 if (!defined('ABSPATH')) {
@@ -10,13 +13,52 @@ if (!defined('ABSPATH')) {
 
 /**
  * ========================================
- * SISTEMA DE ABAS CUSTOMIZADAS
+ * LAYOUT 60/40 VIA HOOKS PUROS
+ * Substitui content-single-product.php override
  * ========================================
+ * 
+ * Estratégia: Injetar wrappers usando hooks em pontos estratégicos
+ * - Antes da galeria: abre xd-product-top + xd-product-gallery
+ * - Depois da galeria: fecha xd-product-gallery
+ * - Antes do summary: (já tem o <div class="summary"> do WooCommerce)
+ * - Depois do summary: fecha xd-product-top
  */
 
 /**
- * Adiciona classe customizada ao wrapper das tabs via output buffering
+ * Abre wrappers ANTES da galeria (primeiro elemento do hook)
+ * Hook: woocommerce_before_single_product_summary
+ * Prioridade: 1 (antes de tudo, inclusive sale flash que é 10)
  */
+add_action('woocommerce_before_single_product_summary', function() {
+    echo '<div class="xd-product-top flex flex-col lg:flex-row gap-6">';
+    echo '<div class="xd-product-gallery w-full lg:w-3/5 shrink-0">';
+}, 1);
+
+/**
+ * Fecha wrapper da galeria DEPOIS da galeria (galeria é prioridade 20)
+ * Hook: woocommerce_before_single_product_summary
+ * Prioridade: 99 (depois da galeria)
+ */
+add_action('woocommerce_before_single_product_summary', function() {
+    echo '</div><!-- /.xd-product-gallery -->';
+}, 99);
+
+/**
+ * Fecha wrapper xd-product-top DEPOIS do summary
+ * Hook: woocommerce_single_product_summary
+ * Prioridade: 99 (depois de tudo no summary)
+ */
+add_action('woocommerce_single_product_summary', function() {
+    echo '</div><!-- /.xd-product-top -->';
+}, 99);
+
+/**
+ * ========================================
+ * INJEÇÃO DE CLASSES VIA OUTPUT BUFFERING
+ * (apenas para adicionar classes, não para layout estrutural)
+ * ========================================
+ */
+
 add_action('woocommerce_before_single_product', function() {
     ob_start();
 });
@@ -24,16 +66,19 @@ add_action('woocommerce_before_single_product', function() {
 add_action('woocommerce_after_single_product', function() {
     $html = ob_get_clean();
     
-    // ========================================
-    // CLASSES INJETADAS VIA OUTPUT BUFFERING
-    // ========================================
-    
-    // Adiciona classe ao container principal do produto
+    // Adiciona classes ao container principal do produto
     $html = preg_replace(
-        '/class="([^"]*product[^"]*type-product[^"]*)"/',
-        'class="$1 xd-single-product"',
+        '/(<div[^>]*id="product-\d+"[^>]*class=")([^"]*)(")/s',
+        '$1$2 xd-single-product flex flex-col gap-8$3',
         $html,
         1
+    );
+    
+    // Adiciona classes ao summary
+    $html = str_replace(
+        'class="summary entry-summary"',
+        'class="summary entry-summary w-full lg:w-2/5 border border-stone-200 rounded-lg p-5 self-start"',
+        $html
     );
     
     // Adiciona classe xd-product-tabs ao wrapper .wc-tabs-wrapper
