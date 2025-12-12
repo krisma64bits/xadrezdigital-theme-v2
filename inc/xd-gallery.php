@@ -123,9 +123,7 @@ function xd_gallery_render(): void {
     $vertical_thumbs = 5;
     $cgkit_gallery_layout = 'vertical-left';
     
-    $product_id = $product->get_id();
     $post_thumbnail_id = $product->get_image_id();
-    $video_gallery = get_post_meta($product_id, 'xd_video_gallery', true);
     
     // Wrapper classes (igual CommerceKit)
     $wrapper_classes = ['woocommerce-product-gallery', 'images'];

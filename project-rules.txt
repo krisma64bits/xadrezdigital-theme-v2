@@ -24,6 +24,9 @@
     Isso substitui a galeria nativa do WooCommerce (FlexSlider) por Swiper.js + PhotoSwipe.
     Localização: inc/xd-gallery.php, assets/xd-gallery/, src/components/xd-gallery/
     Justificativa: Performance 80% melhor, lazy loading otimizado, suporte a vídeos.
+18. Tailwind v4 - Variantes responsivas com @apply:
+    No Tailwind v4, NÃO use lg: ou md: diretamente no @apply.
+    Use @variant ao invés: `@variant lg { .classe { @apply flex-row; } }`
 
 Informacoes do tema:
 Nome: Xadrez Digital Theme

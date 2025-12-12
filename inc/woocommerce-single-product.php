@@ -24,6 +24,18 @@ add_action('woocommerce_before_single_product', function() {
 add_action('woocommerce_after_single_product', function() {
     $html = ob_get_clean();
     
+    // ========================================
+    // CLASSES INJETADAS VIA OUTPUT BUFFERING
+    // ========================================
+    
+    // Adiciona classe ao container principal do produto
+    $html = preg_replace(
+        '/class="([^"]*product[^"]*type-product[^"]*)"/',
+        'class="$1 xd-single-product"',
+        $html,
+        1
+    );
+    
     // Adiciona classe xd-product-tabs ao wrapper .wc-tabs-wrapper
     $html = str_replace(
         'class="woocommerce-tabs wc-tabs-wrapper"',

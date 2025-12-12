@@ -9,6 +9,7 @@
 
 /* Components */
 /* NOTA: xd-gallery usa CSS inline no PHP (estilo CommerceKit) */
+@import "../components/single-product-layout/styles.css";
 @import "../components/add-to-cart/styles.css";
 @import "../components/product-tabs/styles.css";
 @import "../components/product-section/styles.css";

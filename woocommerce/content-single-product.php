@@ -34,32 +34,41 @@ if ( post_password_required() ) {
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'flex flex-col gap-8', $product ); ?>>
 
-    <?php
-    /**
-     * Hook: woocommerce_before_single_product_summary.
-     *
-     * @hooked woocommerce_show_product_sale_flash - 10
-     * @hooked woocommerce_show_product_images - 20
-     */
-    do_action( 'woocommerce_before_single_product_summary' );
-    ?>
+    <!-- WRAPPER: Galeria (esquerda) + Summary (direita) -->
+    <div class="xd-product-top flex flex-col lg:flex-row gap-6">
+        
+        <!-- Galeria: 60% no desktop -->
+        <div class="xd-product-gallery w-full lg:w-3/5 shrink-0">
+            <?php
+            /**
+             * Hook: woocommerce_before_single_product_summary.
+             *
+             * @hooked woocommerce_show_product_sale_flash - 10
+             * @hooked woocommerce_show_product_images - 20
+             */
+            do_action( 'woocommerce_before_single_product_summary' );
+            ?>
+        </div>
 
-    <div class="summary entry-summary w-full lg:w-2/5 border border-stone-200 rounded-lg p-5 !mb-0">
-        <?php
-        /**
-         * Hook: woocommerce_single_product_summary.
-         *
-         * @hooked woocommerce_template_single_title - 5
-         * @hooked woocommerce_template_single_rating - 10
-         * @hooked woocommerce_template_single_price - 10
-         * @hooked woocommerce_template_single_excerpt - 20
-         * @hooked woocommerce_template_single_add_to_cart - 30
-         * @hooked woocommerce_template_single_meta - 40
-         * @hooked woocommerce_template_single_sharing - 50
-         * @hooked WC_Structured_Data::generate_product_data() - 60
-         */
-        do_action( 'woocommerce_single_product_summary' );
-        ?>
+        <!-- Summary: 40% no desktop -->
+        <div class="summary entry-summary w-full lg:w-2/5 border border-stone-200 rounded-lg p-5 !mb-0 self-start">
+            <?php
+            /**
+             * Hook: woocommerce_single_product_summary.
+             *
+             * @hooked woocommerce_template_single_title - 5
+             * @hooked woocommerce_template_single_rating - 10
+             * @hooked woocommerce_template_single_price - 10
+             * @hooked woocommerce_template_single_excerpt - 20
+             * @hooked woocommerce_template_single_add_to_cart - 30
+             * @hooked woocommerce_template_single_meta - 40
+             * @hooked woocommerce_template_single_sharing - 50
+             * @hooked WC_Structured_Data::generate_product_data() - 60
+             */
+            do_action( 'woocommerce_single_product_summary' );
+            ?>
+        </div>
+        
     </div>
 
     <?php

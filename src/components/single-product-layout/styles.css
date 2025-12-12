@@ -1,0 +1,40 @@
+/**
+ * Single Product Layout Styles
+ * 
+ * Layout da página de produto único.
+ * Estilos de suporte ao template override.
+ * 
+ * @see woocommerce/content-single-product.php
+ */
+
+@reference "tailwindcss";
+
+/* ============================================
+   CONTAINER PRINCIPAL DO PRODUTO
+   ============================================ */
+
+.xd-single-product {
+    @apply !flex !flex-col gap-8;
+}
+
+/* ============================================
+   GALERIA: Força ocupar 100% do container
+   ============================================ */
+
+.xd-product-gallery {
+    @apply overflow-hidden;
+}
+
+/* Força wrapper e galeria a ocuparem todo o espaço */
+.xd-product-gallery #commercegurus-pdp-gallery-wrapper {
+    @apply !w-full;
+}
+
+.xd-product-gallery #commercegurus-pdp-gallery {
+    @apply !w-full;
+}
+
+/* Garante que PhotoSwipe não afete o layout */
+.xd-product-gallery #pswp {
+    @apply !fixed;
+}
