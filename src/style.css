@@ -5,6 +5,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Components globais (usados em múltiplas páginas) */
+@import "./components/product-card-badges/styles.css";
+
 /* Configurar a fonte Manrope como fonte sans padrão */
 @theme {
     --font-family-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;

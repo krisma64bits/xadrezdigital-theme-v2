@@ -1,0 +1,93 @@
+/**
+ * ========================================
+ * PRODUCT CARD BADGES
+ * Badges de parcelamento e PIX para cards de produto
+ * Design: parcelamento + card PIX verde
+ * ========================================
+ */
+
+/* ========================================
+ * PREÇO DO PRODUTO (nos loops)
+ * Layout: preço riscado em cima, preço atual embaixo grande
+ * ======================================== */
+
+/* Container do preço - layout horizontal (preço atual + riscado ao lado) */
+.woocommerce ul.products li.product .price {
+    @apply !flex !flex-row !flex-wrap !items-center !gap-2 !mb-1;
+}
+
+/* Preço riscado (antigo) - depois do atual */
+.woocommerce ul.products li.product .price del {
+    @apply !text-sm !text-stone-400 !order-last !leading-tight;
+}
+
+.woocommerce ul.products li.product .price del .woocommerce-Price-amount {
+    @apply !text-sm !text-stone-400;
+}
+
+/* Preço atual - grande, bold, primeiro */
+.woocommerce ul.products li.product .price>.woocommerce-Price-amount,
+.woocommerce ul.products li.product .price ins {
+    @apply !text-xl !font-bold !text-stone-900 !no-underline !leading-tight !order-first;
+}
+
+.woocommerce ul.products li.product .price ins .woocommerce-Price-amount {
+    @apply !text-xl !font-bold !text-stone-900;
+}
+
+/* ========================================
+ * CONTAINER DOS BADGES
+ * ======================================== */
+.xd-product-card-badges {
+    @apply !flex !flex-col !gap-1 !mt-1 !mb-3;
+}
+
+/* ========================================
+ * LINHAS DE PARCELAMENTO
+ * ======================================== */
+.xd-product-card-badges .xd-installment-line {
+    @apply !text-xs !text-stone-600 !leading-tight;
+}
+
+/* Sobrescreve display:block do WooCommerce no strong */
+.xd-product-card-badges .xd-installment-line strong,
+.xd-product-card-badges .xd-installment-line .woocommerce-Price-amount {
+    @apply !inline !text-stone-800 !font-semibold;
+}
+
+/* Linha com juros - cor mais fraca */
+.xd-product-card-badges .xd-installment-interest {
+    @apply !text-stone-500;
+}
+
+/* ========================================
+ * CARD PIX
+ * ======================================== */
+.xd-product-card-badges .xd-pix-card {
+    @apply !flex !items-center !gap-1.5 !mt-1 !px-3 !py-2;
+    @apply !bg-emerald-50 !border !border-emerald-200 !rounded-lg;
+}
+
+/* Ícone Pix */
+.xd-product-card-badges .xd-pix-icon {
+    @apply !w-5 !h-5 !text-emerald-600 !flex-shrink-0;
+}
+
+/* Preço PIX */
+.xd-product-card-badges .xd-pix-price {
+    @apply !text-base !font-bold !text-emerald-800 !leading-tight;
+}
+
+.xd-product-card-badges .xd-pix-price .woocommerce-Price-amount {
+    @apply !text-base !font-bold !text-emerald-800;
+}
+
+/* Label "no pix" */
+.xd-product-card-badges .xd-pix-label {
+    @apply !text-sm !text-emerald-700 !leading-tight;
+}
+
+/* Badge de desconto */
+.xd-product-card-badges .xd-pix-badge {
+    @apply !text-xs !font-semibold !text-white !bg-emerald-600 !px-1.5 !py-0.5 !rounded !leading-tight !ml-auto;
+}

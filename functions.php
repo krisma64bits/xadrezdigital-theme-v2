@@ -87,5 +87,8 @@ require_once get_template_directory() . '/inc/woocommerce-gallery.php';
 // WooCommerce Custom Price Display
 require_once get_template_directory() . '/inc/woocommerce-price.php';
 
+// WooCommerce Product Card Badges (parcelamento/PIX nos loops)
+require_once get_template_directory() . '/inc/woocommerce-product-badges.php';
+
 // WooCommerce Single Product Layout
 require_once get_template_directory() . '/inc/woocommerce-single-product.php';
