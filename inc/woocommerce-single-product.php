@@ -45,6 +45,13 @@ add_action('woocommerce_after_single_product', function() {
         $html
     );
     
+    // Adiciona classe xd-product-reviews ao wrapper de reviews
+    $html = str_replace(
+        'class="woocommerce-Reviews"',
+        'class="woocommerce-Reviews xd-product-reviews"',
+        $html
+    );
+    
     echo $html;
 });
 

@@ -1,0 +1,400 @@
+/**
+ * ========================================
+ * PRODUCT REVIEWS (WOOCOMMERCE)
+ * Estilo shadcn-like mantendo markup original
+ * Design tokens: stone-50 (bg), stone-200 (border), amber-500 (accent)
+ * ========================================
+ */
+
+/* ========================================
+ * REVIEWS SUMMARY (NOVO)
+ * ======================================== */
+.xd-reviews-summary {
+    @apply bg-white border border-stone-200 rounded-lg overflow-hidden mb-6;
+}
+
+/* Header do summary */
+.xd-reviews-summary__header {
+    @apply flex flex-wrap items-center justify-between gap-4 px-6 py-4 bg-stone-100 border-b border-stone-200;
+}
+
+.xd-reviews-summary__title {
+    @apply text-base font-semibold text-stone-900 m-0;
+}
+
+.xd-reviews-summary__meta {
+    @apply flex items-center gap-2;
+}
+
+.xd-reviews-summary__stars .star-rating {
+    @apply text-amber-500;
+}
+
+.xd-reviews-summary__rating {
+    @apply text-sm font-medium text-stone-700;
+}
+
+.xd-reviews-summary__count {
+    @apply text-sm text-stone-500;
+}
+
+/* Body do summary */
+.xd-reviews-summary__body {
+    @apply flex flex-col md:flex-row gap-6 p-6 pb-4;
+}
+
+/* Coluna esquerda: nota média + botão */
+.xd-reviews-summary__left {
+    @apply flex flex-col items-center justify-center gap-4 md:w-40 shrink-0;
+}
+
+.xd-reviews-summary__avg {
+    @apply text-center;
+}
+
+.xd-reviews-summary__avg-value {
+    @apply block text-5xl font-bold text-stone-900 leading-none;
+}
+
+.xd-reviews-summary__avg-max {
+    @apply block text-sm text-stone-500 mt-1;
+}
+
+.xd-reviews-summary__empty {
+    @apply text-sm text-stone-500 text-center m-0;
+}
+
+/* Botão "Escrever avaliação" */
+.xd-reviews-summary__btn {
+    @apply w-full inline-flex items-center justify-center rounded-md px-4 py-2;
+    @apply text-sm font-medium transition-colors;
+    @apply bg-stone-900 text-stone-50 shadow-sm;
+    @apply cursor-pointer border-0;
+}
+
+.xd-reviews-summary__btn:hover {
+    @apply bg-stone-800;
+}
+
+.xd-reviews-summary__btn:focus-visible {
+    @apply outline-none ring-2 ring-stone-950 ring-offset-2;
+}
+
+/* Coluna direita: distribuição por estrelas */
+.xd-reviews-summary__distribution {
+    @apply flex-1 flex flex-col gap-2;
+}
+
+.xd-reviews-summary__bar-row {
+    @apply flex items-center gap-2;
+}
+
+.xd-reviews-summary__bar-label {
+    @apply w-3 text-sm font-medium text-stone-700 text-right;
+}
+
+.xd-reviews-summary__bar-star {
+    @apply text-amber-500 text-sm;
+}
+
+.xd-reviews-summary__bar-track {
+    @apply flex-1 h-2 bg-stone-200 rounded-full overflow-hidden;
+}
+
+.xd-reviews-summary__bar-fill {
+    @apply h-full bg-amber-500 rounded-full transition-all duration-300;
+}
+
+.xd-reviews-summary__bar-count {
+    @apply w-8 text-sm text-stone-500 text-right;
+}
+
+/* ========================================
+ * FORMULÁRIO SLIDE-DOWN
+ * Escondido por padrão, aparece com animação
+ * ======================================== */
+.xd-product-reviews #review_form_wrapper {
+    @apply !p-0 grid overflow-hidden transition-all duration-300 ease-out border-t border-stone-200;
+    grid-template-rows: 0fr;
+}
+
+.xd-product-reviews #review_form_wrapper:not(.xd-form-open) {
+    @apply border-transparent;
+}
+
+.xd-product-reviews #review_form_wrapper.xd-form-open {
+    grid-template-rows: 1fr;
+}
+
+.xd-product-reviews #review_form_wrapper>div {
+    @apply overflow-hidden;
+}
+
+/* Padding no formulário quando aberto */
+.xd-product-reviews #review_form_wrapper.xd-form-open #review_form {
+    @apply p-6;
+}
+
+/* ========================================
+ * CONTAINER PRINCIPAL
+ * Usa flex + order para reorganizar: summary → form → comments
+ * ======================================== */
+.xd-product-reviews {
+    @apply bg-white border border-stone-200 rounded-lg overflow-hidden;
+    @apply flex flex-col;
+}
+
+/* Summary fica primeiro */
+.xd-product-reviews .xd-reviews-summary {
+    @apply order-1 border-0 rounded-none mb-0;
+}
+
+/* Formulário fica segundo */
+.xd-product-reviews #review_form_wrapper {
+    @apply order-2;
+}
+
+/* Lista de comentários fica por último */
+.xd-product-reviews #comments {
+    @apply order-3 border-t border-stone-200;
+}
+
+/* ========================================
+ * TÍTULO PRINCIPAL (h2) - ESCONDIDO (usamos o do summary)
+ * ======================================== */
+.xd-product-reviews .woocommerce-Reviews-title {
+    @apply !hidden;
+}
+
+/* ========================================
+ * LISTA DE AVALIAÇÕES EXISTENTES
+ * ======================================== */
+.xd-product-reviews .commentlist {
+    @apply list-none m-0 px-6 pt-6 pb-0 space-y-4;
+}
+
+/* Card de avaliação individual */
+.xd-product-reviews .commentlist .review {
+    @apply p-4 bg-stone-50 rounded-lg border border-stone-100 !mb-6;
+}
+
+/* Esconde avatar */
+.xd-product-reviews .commentlist .review .avatar {
+    @apply hidden;
+}
+
+/* Container do comentário */
+.xd-product-reviews .commentlist .review .comment_container {
+    @apply block;
+}
+
+/* Texto do comentário - reset margin do WooCommerce */
+.xd-product-reviews .commentlist .review .comment-text {
+    @apply !m-0 space-y-2;
+}
+
+/* Estrelas de rating */
+.xd-product-reviews .commentlist .review .star-rating {
+    @apply text-amber-500;
+}
+
+/* Meta: autor + data */
+.xd-product-reviews .commentlist .review .meta {
+    @apply text-sm text-stone-500 m-0;
+}
+
+.xd-product-reviews .commentlist .review .woocommerce-review__author {
+    @apply text-stone-900 font-medium;
+}
+
+.xd-product-reviews .commentlist .review .woocommerce-review__dash {
+    @apply mx-1;
+}
+
+/* Descrição do review */
+.xd-product-reviews .commentlist .review .description {
+    @apply text-sm text-stone-700;
+}
+
+.xd-product-reviews .commentlist .review .description p {
+    @apply m-0;
+}
+
+/* ========================================
+ * FORMULÁRIO DE AVALIAÇÃO
+ * ======================================== */
+.xd-product-reviews #review_form_wrapper {
+    @apply p-6 border-t border-stone-200;
+}
+
+/* Título "Adicionar uma avaliação" */
+.xd-product-reviews .comment-reply-title {
+    @apply block text-lg font-semibold text-stone-900 mb-4;
+}
+
+.xd-product-reviews .comment-reply-title small {
+    @apply text-sm font-normal;
+}
+
+.xd-product-reviews .comment-reply-title small a {
+    @apply text-amber-600 hover:text-amber-700 no-underline;
+}
+
+/* Notas do formulário */
+.xd-product-reviews .comment-notes {
+    @apply text-sm text-stone-500 mb-4;
+}
+
+.xd-product-reviews .required-field-message .required {
+    @apply text-red-500;
+}
+
+/* ========================================
+ * ESTRELAS DE RATING (INPUT)
+ * ======================================== */
+.xd-product-reviews .comment-form-rating {
+    @apply mb-4;
+}
+
+.xd-product-reviews .comment-form-rating>label {
+    @apply block text-sm font-medium text-stone-700 mb-2;
+}
+
+/* Container das estrelas */
+.xd-product-reviews .comment-form-rating .stars {
+    @apply m-0;
+}
+
+.xd-product-reviews .comment-form-rating .stars span {
+    @apply inline-flex gap-1;
+}
+
+/* Links das estrelas - estado padrão */
+.xd-product-reviews .comment-form-rating .stars a {
+    @apply text-2xl text-stone-300 no-underline transition-colors;
+    font-family: 'star' !important;
+}
+
+.xd-product-reviews .comment-form-rating .stars a::before {
+    content: '\e021';
+}
+
+/* Hover - preenche estrelas */
+.xd-product-reviews .comment-form-rating .stars a:hover~a::before {
+    content: '\e021';
+}
+
+.xd-product-reviews .comment-form-rating .stars:hover a::before {
+    content: '\e020';
+    @apply text-amber-500;
+}
+
+.xd-product-reviews .comment-form-rating .stars a:hover~a::before {
+    content: '\e021';
+    @apply text-stone-300;
+}
+
+/* Selecionado */
+.xd-product-reviews .comment-form-rating .stars.selected a.active~a::before {
+    content: '\e021';
+}
+
+.xd-product-reviews .comment-form-rating .stars.selected a::before {
+    content: '\e020';
+    @apply text-amber-500;
+}
+
+.xd-product-reviews .comment-form-rating .stars.selected a.active~a::before {
+    content: '\e021';
+    @apply text-stone-300;
+}
+
+/* ========================================
+ * CAMPOS DO FORMULÁRIO (SHADCN-LIKE)
+ * ======================================== */
+
+/* Labels */
+.xd-product-reviews .comment-form label {
+    @apply block text-sm font-medium text-stone-700 mb-1.5;
+}
+
+.xd-product-reviews .comment-form label .required {
+    @apply text-red-500 ml-0.5;
+}
+
+/* Textarea */
+.xd-product-reviews .comment-form-comment {
+    @apply mb-4;
+}
+
+.xd-product-reviews .comment-form textarea {
+    @apply w-full min-h-28 px-3 py-2 text-sm rounded-md border border-stone-200 bg-white;
+    @apply placeholder:text-stone-400;
+    @apply focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-0 focus:border-amber-500;
+    @apply transition-colors resize-y;
+}
+
+/* Inputs de texto (nome, email) */
+.xd-product-reviews .comment-form-author,
+.xd-product-reviews .comment-form-email {
+    @apply mb-4;
+}
+
+.xd-product-reviews .comment-form input[type="text"],
+.xd-product-reviews .comment-form input[type="email"] {
+    @apply w-full h-10 px-3 py-2 text-sm rounded-md border border-stone-200 bg-white;
+    @apply placeholder:text-stone-400;
+    @apply focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-0 focus:border-amber-500;
+    @apply transition-colors;
+}
+
+/* Checkbox */
+.xd-product-reviews .comment-form-cookies-consent {
+    @apply flex items-start gap-2 mb-6;
+}
+
+.xd-product-reviews .comment-form input[type="checkbox"] {
+    @apply w-4 h-4 mt-0.5 rounded border border-stone-300 bg-white;
+    @apply checked:bg-amber-500 checked:border-amber-500;
+    @apply focus:ring-2 focus:ring-amber-500 focus:ring-offset-0;
+    @apply cursor-pointer;
+}
+
+.xd-product-reviews .comment-form-cookies-consent label {
+    @apply text-sm text-stone-600 font-normal cursor-pointer mb-0;
+}
+
+/* ========================================
+ * BOTÃO ENVIAR
+ * Design token: button.base + button.variants.primary
+ * ======================================== */
+.xd-product-reviews .form-submit {
+    @apply m-0;
+}
+
+.xd-product-reviews .form-submit input[type="submit"] {
+    /* button.base + button.variants.primary */
+    @apply !inline-flex !items-center !justify-center !rounded-md !px-4 !py-2;
+    @apply !text-sm !font-medium !transition-colors;
+    @apply !bg-stone-900 !text-stone-50 !shadow-sm !cursor-pointer !border-0;
+}
+
+.xd-product-reviews .form-submit input[type="submit"]:hover {
+    @apply !bg-stone-800;
+}
+
+.xd-product-reviews .form-submit input[type="submit"]:focus-visible {
+    @apply !outline-none !ring-2 !ring-stone-950 !ring-offset-2;
+}
+
+/* ========================================
+ * UTILITIES
+ * ======================================== */
+.xd-product-reviews .clear {
+    @apply hidden;
+}
+
+/* Remove #respond default margins */
+.xd-product-reviews #respond {
+    @apply m-0;
+}

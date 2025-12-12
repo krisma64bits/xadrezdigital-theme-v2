@@ -92,3 +92,6 @@ require_once get_template_directory() . '/inc/woocommerce-product-badges.php';
 
 // WooCommerce Single Product Layout
 require_once get_template_directory() . '/inc/woocommerce-single-product.php';
+
+// WooCommerce Reviews Customization
+require_once get_template_directory() . '/inc/woocommerce-reviews.php';
