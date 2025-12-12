@@ -25,9 +25,7 @@ function xadrez_theme_setup() {
 
     // WooCommerce support
     add_theme_support('woocommerce');
-    add_theme_support('wc-product-gallery-zoom');
-    add_theme_support('wc-product-gallery-lightbox');
-    add_theme_support('wc-product-gallery-slider');
+    // NOTA: Galeria nativa desabilitada - usando XD Gallery (Swiper + PhotoSwipe)
 }
 add_action('after_setup_theme', 'xadrez_theme_setup');
 
@@ -80,6 +78,9 @@ function xadrez_enqueue_assets() {
     wp_enqueue_style('xadrez-style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts', 'xadrez_enqueue_assets');
+
+// XD Gallery - Galeria customizada com Swiper + PhotoSwipe (baseada em CommerceKit GPLv3)
+require_once get_template_directory() . '/inc/xd-gallery.php';
 
 // WooCommerce Custom Price Display
 require_once get_template_directory() . '/inc/woocommerce-price.php';

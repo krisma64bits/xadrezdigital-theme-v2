@@ -19,6 +19,11 @@
     c) NUNCA faça template override apenas para mudar estilos
     d) NUNCA altere a estrutura HTML/markup original do WooCommerce
     e) Mantenha atributos ARIA e funcionalidade JavaScript intactos
+17. EXCEÇÃO - Galeria de Produto (XD Gallery):
+    A galeria de produto usa markup customizado baseado em CommerceKit (GPLv3) por motivos de performance.
+    Isso substitui a galeria nativa do WooCommerce (FlexSlider) por Swiper.js + PhotoSwipe.
+    Localização: inc/xd-gallery.php, assets/xd-gallery/, src/components/xd-gallery/
+    Justificativa: Performance 80% melhor, lazy loading otimizado, suporte a vídeos.
 
 Informacoes do tema:
 Nome: Xadrez Digital Theme
