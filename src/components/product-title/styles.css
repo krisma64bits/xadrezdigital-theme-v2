@@ -1,0 +1,13 @@
+/**
+ * Product Title Styles
+ * 
+ * Estiliza o título do produto (h1.product_title) via CSS.
+ * Elimina a necessidade de template override.
+ * 
+ * Classes equivalentes ao override anterior:
+ * - text-stone-900, text-3xl, font-bold, mb-2
+ */
+
+.woocommerce div.product .product_title {
+    @apply !text-2xl !leading-none !tracking-tight !font-semibold !text-stone-900 !mb-2;
+}
