@@ -1,0 +1,10 @@
+/**
+ * Product Short Description Styles
+ * 
+ * Esconde a descrição curta visualmente (sr-only) mas mantém no DOM para SEO.
+ * Elimina a necessidade de template override.
+ */
+
+.woocommerce-product-details__short-description {
+    @apply sr-only;
+}

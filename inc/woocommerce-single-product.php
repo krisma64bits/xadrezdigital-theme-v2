@@ -109,6 +109,15 @@ add_action('woocommerce_after_single_product', function() {
         $html
     );
     
+    // Adiciona classes e aria-hidden ao .product_meta (SKU, categorias, tags)
+    $html = preg_replace(
+        '/<div\s+class="product_meta">/i',
+        '<div class="product_meta hidden" aria-hidden="true">',
+        $html,
+        1
+    );
+    
+    
     echo $html;
 });
 

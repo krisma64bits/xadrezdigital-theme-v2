@@ -1,0 +1,21 @@
+/**
+ * Product Price Styles
+ * 
+ * Estiliza o preço padrão do WooCommerce sem alterar o markup.
+ * Segue Regra 16: CSS Tailwind para estilizar classes existentes.
+ */
+
+/* Preço principal */
+.woocommerce div.product p.price {
+    @apply text-stone-900 font-bold text-4xl leading-none;
+}
+
+/* Preço riscado (quando em promoção) */
+.woocommerce div.product p.price del {
+    @apply text-stone-500 text-lg font-normal block leading-none;
+}
+
+/* Preço atual */
+.woocommerce div.product p.price ins {
+    @apply no-underline;
+}
